@@ -1,3 +1,222 @@
-body {
-  background-color: antiquewhite;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(assets/fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(assets/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mitr';
+  src: url(assets/fonts/Mitr/Mitr-Regular.ttf) format('truetype');
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+  --section-bg-color-primary: #FFFFFF;
+  --section-bg-color-secondary: #F2F2F2;
+  --button-link-bg-primary: #2EBAEB;
+
+  --paragraph-color-primary: #000000;
+  --paragraph-color-secondary: #4F4F4F;
+  --heading-color-primary: #2E8CAD;
+  --heading-color-dark: #000000;
+  --button-text-color-primary: #FFFFFF;
+  --card-bacground-color-primary: #FFFFFF;
+}
+.color__bg--primary {
+  background-color: #FFFFFF;
+}
+.color__heading--primary {
+  color: #2E8CAD;
+}
+
+.section {
+  width: 1903px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &.section__bg--primary {
+    background-color: var(--section-bg-color-primary);
+  }
+  &.section__bg--secondary {
+    background-color: var(--section-bg-color-secondary);
+  }
+  &.section__box-shadow {
+    box-shadow: 0px 0px 50px rgba(18, 65, 82, 0.15);
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  &.card__about-us{
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 25px;
+  }
+  &.card__services-container {
+    width: 385px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--card-bacground-color-primary);
+    border-radius: 30px;
+    margin: 50px 12px;
+
+  }
+  &.card__services-image{
+    width: 385px;
+    height: 290px;
+    border-radius: 30px 30px 0px 0px;      
+  }
+  &.card__service-description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+  }
+}
+.numbering {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--heading-color-primary);
+  border-radius: 50%;
+  font-family: 'Poppins';
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--heading-color-primary);
+}
+.paragraph {
+  &.paragraph__size--normal{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  }
+  &.paragraph__size--small{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  &.paragraph__color--primary {
+    color: var(--paragraph-color-primary);
+  }
+  &.paragraph__color--secoundary {
+    color: var(--paragraph-color-secondary);
+  }
+}
+
+.heading{
+  font-family: 'Mitr';  
+  font-style: normal;
+  margin: 0;
+  &.heading__2{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 56px;
+    &.heading__2--color-primary{
+      color: var(--heading-color-primary);
+    }
+  }
+  &.heading__5{
+    font-weight: "Roboto";
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 24px;
+    &.heading__5--color-black {
+      color: var(--heading-color-dark);
+    }
+  }  
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  &.button__link {
+    width: 160px;
+    height: 50px;
+    border: solid 1px var(--button-link-bg-primary);
+    border-radius: 40px;
+    background-color: var(--button-link-bg-primary);
+    &:hover {
+      background-color: #4F4F4F;
+      border: none;
+    }
+    &.button__outline {
+      position: absolute;
+      background-color: transparent;
+      margin-bottom: -4px;
+      margin-right: -4px; 
+    }   
+  }  
+  &.button__text--primary {
+    width: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--button-text-color-primary);
+  }
+}
+
